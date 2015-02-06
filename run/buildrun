@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+
+source ./run/build
+
+cd ./process
+go run activity_events.go
