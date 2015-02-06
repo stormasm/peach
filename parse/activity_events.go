@@ -9,6 +9,8 @@ func Listevents(events []github.Event) {
 	fmt.Printf("Number of events = %v\n", len(events))
 
 	for i, v := range events {
-		fmt.Printf("array value at [%d]=%s\n", i, *v.Type)
+		fmt.Printf("[%d] %s  ", i, *v.Type)
+		fmt.Printf("%s", *v.Repo.Name)
+		fmt.Printf("\n")
 	}
 }
