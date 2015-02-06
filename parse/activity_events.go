@@ -9,13 +9,27 @@ func Listevents(events []github.Event) {
 	fmt.Printf("Number of events = %v\n", len(events))
 
 	for i, event := range events {
+		//fmt.Printf("\n")
+		fmt.Printf("[%d] %s  ", i, *event.Type)
+		EventSwitch(event)
+	}
+}
+
+
+
+/*
+func Listevents(events []github.Event) {
+	fmt.Printf("Number of events = %v\n", len(events))
+
+	for i, event := range events {
 		fmt.Printf("\n")
 		fmt.Printf("[%d] %s  ", i, *event.Type)
 		fmt.Printf("%s", *event.Repo.Name)
 		fmt.Printf("\n")
-		payload(event)
+		//payload(event)
 	}
 }
+*/
 
 func payload(event github.Event) {
 	fmt.Println("\n")
