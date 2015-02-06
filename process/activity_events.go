@@ -4,6 +4,7 @@ import (
 	"code.google.com/p/goauth2/oauth"
 	"fmt"
 	"github.com/google/go-github/github"
+	"github.com/stormasm/peach/parse"
 	"os"
 )
 
@@ -37,11 +38,7 @@ func main() {
 		fmt.Println("Activities.ListEvents returned error: %v", err)
 	}
 
-	fmt.Printf("Number of events = %v\n", len(events))
-
-	for i, v := range events {
-		fmt.Printf("array value at [%d]=%s\n", i, *v.Type)
-	}
+	parse.Listevents(events)
 
 	rate, _, err := client.RateLimit()
 	if err != nil {
