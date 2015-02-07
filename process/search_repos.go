@@ -4,7 +4,7 @@ import (
 	"code.google.com/p/goauth2/oauth"
 	"fmt"
 	"github.com/google/go-github/github"
-//	"github.com/stormasm/peach/parse"
+	"github.com/stormasm/peach/parse"
 	"os"
 )
 
@@ -38,14 +38,14 @@ func main() {
 		fmt.Println("Activities.ListEvents returned error: %v", err)
 	}
 */
-	opts := &github.SearchOptions{Sort: "forks", Order: "desc", ListOptions: github.ListOptions{Page: 2, PerPage: 2}}
-	result, _, err := client.Search.Repositories("docker", opts)
+	opts := &github.SearchOptions{Sort: "forks", Order: "desc", ListOptions: github.ListOptions{Page: 1, PerPage: 10}}
+	result, _, err := client.Search.Repositories("redis", opts)
 	if err != nil {
 		fmt.Println("Search.Repositories returned error: %v", err)
 	}
 
-	//parse.Listevents(events)
-	fmt.Println(result)
+	parse.Search_repos_results(result)
+	//fmt.Println(result)
 
 	rate, _, err := client.RateLimit()
 	if err != nil {
