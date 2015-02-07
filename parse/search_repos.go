@@ -6,7 +6,7 @@ import (
 )
 
 func Search_repos_results(results *github.RepositoriesSearchResult) {
-	fmt.Printf("Number of repositories = %d\n", results.Total)
+	fmt.Printf("Number of repositories = %d\n", *results.Total)
 
 	for i, repository := range results.Repositories {
 		//fmt.Printf("\n")

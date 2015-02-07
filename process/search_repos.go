@@ -39,7 +39,7 @@ func main() {
 	}
 */
 	opts := &github.SearchOptions{Sort: "forks", Order: "desc", ListOptions: github.ListOptions{Page: 1, PerPage: 10}}
-	result, _, err := client.Search.Repositories("redis", opts)
+	result, _, err := client.Search.Repositories("nsqueue", opts)
 	if err != nil {
 		fmt.Println("Search.Repositories returned error: %v", err)
 	}
