@@ -47,11 +47,14 @@ func main() {
 	parse.Search_repos_results(result)
 	//fmt.Println(result)
 
-	rate, _, err := client.RateLimit()
+	rate, _, err := client.RateLimits()
 	if err != nil {
 		fmt.Printf("Error fetching rate limit: %#v\n\n", err)
 	} else {
-		fmt.Printf("API Rate Limit: %d\n", rate.Remaining)
+		fmt.Println("Core   Remaining = ",rate.Core.Remaining)
+		fmt.Println("Search Remaining = ", rate.Search.Remaining)
+		//fmt.Printf("Core API Rate Limit: %d\n", rate.core.Remaining)
+		//fmt.Printf("Search API Rate Limit: %d\n", rate.search.Remaining)
 	}
 
 }
