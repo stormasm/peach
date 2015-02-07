@@ -15,8 +15,6 @@ func Listevents(events []github.Event) {
 	}
 }
 
-
-
 /*
 func Listevents(events []github.Event) {
 	fmt.Printf("Number of events = %v\n", len(events))
