@@ -32,8 +32,8 @@ func init() {
 
 func main() {
 	opts := &github.SearchOptions{Sort: "forks", Order: "desc",
-		ListOptions: github.ListOptions{Page: 1, PerPage: 10}}
-	result, _, err := client.Search.Users("location:albuquerque,nm", opts)
+		ListOptions: github.ListOptions{Page: 1, PerPage: 100}}
+	result, _, err := client.Search.Users("location:portland,or language:go", opts)
 	if err != nil {
 		fmt.Printf("Search.Issues returned error: %v", err)
 	}
