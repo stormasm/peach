@@ -2,7 +2,7 @@ package parse
 
 import (
 	"fmt"
-	"github.com/google/go-github/github"
+	"github.com/stormasm/go-github/github"
 )
 
 func Listevents(events []github.Event) {
