@@ -3,7 +3,7 @@ package main
 import (
 	"code.google.com/p/goauth2/oauth"
 	"fmt"
-	"github.com/google/go-github/github"
+	"github.com/stormasm/go-github/github"
 	"github.com/stormasm/peach/parse"
 	"os"
 )
@@ -33,7 +33,7 @@ func init() {
 func main() {
 	opts := &github.SearchOptions{Sort: "forks", Order: "desc",
 		ListOptions: github.ListOptions{Page: 1, PerPage: 10}}
-	result, _, err := client.Search.Users("storm", opts)
+	result, _, err := client.Search.Users("location:albuquerque,nm", opts)
 	if err != nil {
 		fmt.Printf("Search.Issues returned error: %v", err)
 	}

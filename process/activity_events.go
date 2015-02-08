@@ -3,7 +3,7 @@ package main
 import (
 	"code.google.com/p/goauth2/oauth"
 	"fmt"
-	"github.com/google/go-github/github"
+	"github.com/stormasm/go-github/github"
 	"github.com/stormasm/peach/parse"
 	"os"
 )

@@ -2,6 +2,6 @@
 
 source ./run/build
 
-go get github.com/google/go-github/github
+go get github.com/stormasm/go-github/github
 go get github.com/google/go-querystring/query
 go get code.google.com/p/goauth2/oauth
